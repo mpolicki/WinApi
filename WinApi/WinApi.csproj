@@ -10,7 +10,7 @@
     <PackageIconUrl>https://raw.githubusercontent.com/prasannavl/WinApi/master/Misc/Logo.png</PackageIconUrl>
     <Copyright>Copyright © Prasanna V. Loganathar</Copyright>
     <Description>A simple, direct, ultra-thin CLR library for high-performance Win32 Native Interop</Description>
-    <Version>4.0.2</Version>
+    <Version>4.0.3</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageTags>win32 native interop</PackageTags>
   </PropertyGroup>
