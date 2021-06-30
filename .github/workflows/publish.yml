@@ -18,7 +18,7 @@ jobs:
       # Publish
       - name: publish on version change
         id: publish_nuget
-        uses: mpolicki/publish-nuget@d788e4a59e947e73061b1b009587ff1435fe69cd
+        uses: mpolicki/publish-nuget@b4b32a6aaf01c5fc40a1de9ae1a559c27f337331
         with:
           # Filepath of the project to be packaged, relative to root of repository
           PROJECT_FILE_PATH: WinApi/WinApi.csproj
