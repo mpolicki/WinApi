@@ -14,5 +14,6 @@ jobs:
         id: tag
         uses: simpleactions/create-tag@v1.0.0
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           tag: v4.0.1
           message: 4.0.1
