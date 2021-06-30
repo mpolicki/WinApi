@@ -12,7 +12,7 @@ jobs:
 
       - name: Tag
         id: tag
-        uses: simpleactions/create-tag
+        uses: simpleactions/create-tag@v1
         with:
-          tag: 4.0.1
+          tag: v4.0.1
           message: 4.0.1
