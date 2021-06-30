@@ -1,0 +1,18 @@
+name: Tag
+on:
+  push:
+    branches:
+      - master # Default release branch
+jobs:
+  tag:
+    name: Tag
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Tag
+        id: tag
+        uses: simpleactions/create-tag
+        with:
+          tag: 4.0.1
+          message: 4.0.1
