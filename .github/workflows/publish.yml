@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Publish on version change (WinApi.Desktop)
         id: publish_nuget_WinApi-Desktop
-        uses: Rebel028/publish-nuget@v2.6.2
+        uses: mpolicki/publish-nuget@407109cdae6d1fb9c989246fc31eb579c1f4ebe2
         with:
           # Filepath of the project to be packaged, relative to root of repository
           PROJECT_FILE_PATH: WinApi.Desktop/WinApi.Desktop.csproj
@@ -48,7 +48,7 @@ jobs:
 
       - name: Publish on version change (WinApi.DxUtils)
         id: publish_nuget_WinApi-DxUtils
-        uses: Rebel028/publish-nuget@v2.6.2
+        uses: mpolicki/publish-nuget@407109cdae6d1fb9c989246fc31eb579c1f4ebe2
         with:
           PROJECT_FILE_PATH: WinApi.DxUtils/WinApi.DxUtils.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
@@ -56,7 +56,7 @@ jobs:
           
       - name: Publish on version change (WinApi.Utils)
         id: publish_nuget_WinApi-Utils
-        uses: Rebel028/publish-nuget@v2.6.2
+        uses: mpolicki/publish-nuget@407109cdae6d1fb9c989246fc31eb579c1f4ebe2
         with:
           PROJECT_FILE_PATH: WinApi.Utils/WinApi.Utils.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
@@ -64,7 +64,7 @@ jobs:
           
       - name: Publish on version change (WinApi.Windows.Controls)
         id: publish_nuget_WinApi_Windows-Controls
-        uses: Rebel028/publish-nuget@v2.6.2
+        uses: mpolicki/publish-nuget@407109cdae6d1fb9c989246fc31eb579c1f4ebe2
         with:
           PROJECT_FILE_PATH: WinApi.Windows.Controls/WinApi.Windows.Controls.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
@@ -72,7 +72,7 @@ jobs:
           
       - name: Publish on version change (WinApi)
         id: publish_nuget_WinApi
-        uses: Rebel028/publish-nuget@v2.6.2
+        uses: mpolicki/publish-nuget@407109cdae6d1fb9c989246fc31eb579c1f4ebe2
         with:
           PROJECT_FILE_PATH: WinApi/WinApi.csproj
           NUGET_KEY: ${{secrets.NUGET_API_KEY}}
