@@ -1,27 +1,20 @@
-name: publish to nuget
+name: Publish to Nuget
 on:
   push:
     branches:
       - master # Default release branch
 jobs:
   publish:
-    name: build, pack & publish
+    name: Build, pack & publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-
-      # - name: Setup dotnet
-      #   uses: actions/setup-dotnet@v1
-      #   with:
-      #     dotnet-version: 3.1.200
-
-      # Publish
-      - name: publish on version change
-        id: publish_nuget
+      - name: Publish on version change (WinApi.Desktop)
+        id: publish_nuget_WinApi.Desktop
         uses: Rebel028/publish-nuget@v2.6.2
         with:
           # Filepath of the project to be packaged, relative to root of repository
-          PROJECT_FILE_PATH: WinApi/WinApi.csproj
+          PROJECT_FILE_PATH: WinApi.Desktop/WinApi.Desktop.csproj
           
           # NuGet package id, used for version detection & defaults to project name
           # PACKAGE_NAME: Core
@@ -52,3 +45,35 @@ jobs:
           
           # Flag to throw an error when trying to publish an existing version of a package
           # THOW_ERROR_IF_VERSION_EXISTS: false
+
+      - name: Publish on version change (WinApi.DxUtils)
+        id: publish_nuget_WinApi.DxUtils
+        uses: Rebel028/publish-nuget@v2.6.2
+        with:
+          PROJECT_FILE_PATH: WinApi.DxUtils/WinApi.DxUtils.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://apiint.nugettest.org
+          
+      - name: Publish on version change (WinApi.Utils)
+        id: publish_nuget_WinApi.Utils
+        uses: Rebel028/publish-nuget@v2.6.2
+        with:
+          PROJECT_FILE_PATH: WinApi.Utils/WinApi.Utils.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://apiint.nugettest.org
+          
+      - name: Publish on version change (WinApi.Windows.Controls)
+        id: publish_nuget_WinApi.Windows.Controls
+        uses: Rebel028/publish-nuget@v2.6.2
+        with:
+          PROJECT_FILE_PATH: WinApi.Windows.Controls/WinApi.Windows.Controls.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://apiint.nugettest.org
+          
+      - name: Publish on version change (WinApi)
+        id: publish_nuget_WinApi
+        uses: Rebel028/publish-nuget@v2.6.2
+        with:
+          PROJECT_FILE_PATH: WinApi/WinApi.csproj
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+          NUGET_SOURCE: https://apiint.nugettest.org
