@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Publish on version change (WinApi.Desktop)
-        id: publish_nuget_WinApi.Desktop
+        id: publish_nuget_WinApi-Desktop
         uses: Rebel028/publish-nuget@v2.6.2
         with:
           # Filepath of the project to be packaged, relative to root of repository
@@ -47,7 +47,7 @@ jobs:
           # THOW_ERROR_IF_VERSION_EXISTS: false
 
       - name: Publish on version change (WinApi.DxUtils)
-        id: publish_nuget_WinApi.DxUtils
+        id: publish_nuget_WinApi-DxUtils
         uses: Rebel028/publish-nuget@v2.6.2
         with:
           PROJECT_FILE_PATH: WinApi.DxUtils/WinApi.DxUtils.csproj
@@ -55,7 +55,7 @@ jobs:
           NUGET_SOURCE: https://apiint.nugettest.org
           
       - name: Publish on version change (WinApi.Utils)
-        id: publish_nuget_WinApi.Utils
+        id: publish_nuget_WinApi-Utils
         uses: Rebel028/publish-nuget@v2.6.2
         with:
           PROJECT_FILE_PATH: WinApi.Utils/WinApi.Utils.csproj
@@ -63,7 +63,7 @@ jobs:
           NUGET_SOURCE: https://apiint.nugettest.org
           
       - name: Publish on version change (WinApi.Windows.Controls)
-        id: publish_nuget_WinApi.Windows.Controls
+        id: publish_nuget_WinApi_Windows-Controls
         uses: Rebel028/publish-nuget@v2.6.2
         with:
           PROJECT_FILE_PATH: WinApi.Windows.Controls/WinApi.Windows.Controls.csproj
